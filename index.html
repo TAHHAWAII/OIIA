@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  margin:0;
+  background:black;
+}
+#loading {
+  position:fixed;
+  width:100vw;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-size:32px;
+  font-family:sans-serif;
+  cursor:pointer;
+  z-index:10;
+}
+video {
+  position:fixed;
+  width:100vw;
+  height:100vh;
+  object-fit:cover;
+  display:none;
+}
+</style>
+</head>
+
+<body>
+
+<div id="loading">Tap to view invoice...</div>
+
+<video id="video" loop playsinline>
+  <source src="https://files.catbox.moe/9z1v7x.mp4" type="video/mp4">
+</video>
+
+<script>
+document.getElementById("loading").onclick = function() {
+  let v = document.getElementById("video");
+  this.style.display = "none";
+  v.style.display = "block";
+  v.muted = false;
+  v.play();
+};
+</script>
+
+</body>
+</html>
